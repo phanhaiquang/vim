@@ -6,77 +6,39 @@ syntax on
 "should use virtual-mode
 map <C-W><C-D> :'q,'wd<CR>
 map <C-W><C-Y> :'q,'wy<CR>
-"
-"comment line (already use nerd_commenter)
-"map <C-W><C-K> :'q,'wnormal 0i//<CR>
-"map <C-W><C-J> :'q,'wnormal 0xx<CR>
 
-"map <C-W><C-H> :'q,'wnormal 0x<CR>
 map ,ll :normal @e<CR>                           | "loop for a @e
 map ,mm :call ToggleMouseSetting()<CR>           | "toggle mouse
 
-"
-map ,il :normal 0i	<CR>                     | "insert tab at beginning of line
-map ,ih :normal 0x<CR>                      | "delete 1st character (for alignment)
+""insert indent manually
+"map ,il :normal 0i	<CR>                     | "insert tab at beginning of line
+"map ,ih :normal 0x<CR>                       | "delete 1st character (for alignment)
+"use: >>  <<  for this purpose
+
+"alignment
 map ,=  :Align \s=\s<CR>
 map ,,  :Align \s,\s<CR>
 map ,:  :Align \s:\s<CR>
 
-"make session
+"session
 :nmap ,ss :mksession! ~/.vim/session/
-"open session
 :nmap ,os :so ~/.vim/session/
 
-map ,ca :g/^/normal dd<CR>                        | "clean all file
-
-
-" to completion 
+"to completion 
 set ofu=syntaxcomplete#Complete
-  
-"grep php/css/js
-map ,fp :tabnew<CR>:Ack --php  -G 
-map ,fc :tabnew<CR>:Ack --css  -G 
-map ,fj :tabnew<CR>:Ack --js  -G 
-map ,fa :tabnew<CR>:Ack -G  
-
-" search when typing
-set incsearch
-
-"for php-document
-:inoremap <c-w><c-p> <esc>:call PhpDocSingle()<cr>
-:nnoremap <c-w><c-p> :call PhpDocSingle()<cr>
-:vnoremap <c-w><c-p> :call PhpDocRange()<cr> 
-
-"
-"[[ [{ [( ]) ]} ]]
-
-:so ~/.vim/mysetting/web.vim
-:so ~/.vim/mysetting/function.vim
 
 "--- TAB setting
-"tab mapping
-:nmap gf <C-W>gf
-:nmap tn :tabn<CR>
-:nmap tp :tabp<CR>
+"quickfix use current tab if exist
+set switchbuf=usetab,newtab
+map ,nt :set switchbuf=usetab,newtab<CR>         | "new tab
+map ,st :set switchbuf=usetab<CR>               | "same tab
+"mapping
+:nmap gf <c-w>gf
+:nmap ,tn :tabn<CR>
+:nmap ,tp :tabp<CR>
 :nmap <c-l> :tabn<CR>
 :nmap <c-h> :tabp<CR>
 :nmap ,ta :tab sball<CR>
-
-if has("multi_byte")    " if not, we need to recompile
-  if &enc !~? '^u'      " if the locale 'encoding' starts with u or U
-                        " then Unicode is already set
-    if &tenc == ''
-      let &tenc = &enc  " save the keyboard charset
-    endif
-    set enc=utf-8       " to support Unicode fully, we need to be able
-                        " to represent all Unicode codepoints in memory
-  endif
-  set fencs=ucs-bom,utf-8,latin1
-  setg bomb             " default for new Unicode files
-  setg fenc=latin1      " default for files created from scratch
-else
-  echomsg 'Warning: Multibyte support is not compiled-in.'
-endif
 
 "go to line of previous left (only with file with extension)
 "au BufWinLeave * mkview
@@ -93,47 +55,20 @@ endif
 " Use pathogen to load plugins from bundle directory
 filetype off
 call pathogen#runtime_append_all_bundles()
-"call pathogen#helptags()
+call pathogen#helptags()
 filetype on
 filetype indent plugin on
 
 " auto indent
 "map ,= gg=G
 
-"map ,b :'<,'>normal 
+map ,b :'<,'>normal 
 
-" set tag file
-" jn = jump to tag of function at cursor
-" jp = jump back to previous tag (in stack)
-set tags=/home/quangphan/tags
-map fn <C-]>
-map fp <C-T>
 
-" Taglist
-"map ,tt :TlistToggle<CR>
 
-set hlsearch		"highlight search
-
-" Indent
-"tab setting
-"set noet ci pi sts=0 sw=4 ts=4
-"set expandtab
-set ts=2 sw=2 noexpandtab
-
-" ----------- vim-surround ----------- "
-" cs(change surround)
-" ds(delete surround)
-" yss(add surround for whole line)
-" S(in Virtual mode, as same as yss but the surround is insert at new line
-" t=tag iw=inner-work
-autocmd FileType php let b:surround_45 = "<? \r ?>"
-
-"nowrap
-set wrap! nu nobackup writebackup
-set ignorecase                                | "set ignore case searching
 
 "set filename
-set isfname-=,
+set isfname-=,:
 
 "set path for Linux command execution
 set path+=.,~/public_html,~/public_html/application,~,~/project/tz/application
@@ -144,35 +79,6 @@ set path+=.,~/public_html,~/public_html/application,~,~/project/tz/application
 "NERDTree plugin
 map ,nt :call CdToCurrentPath()<CR>
 
-""search file in sub-folders
-"map ff :FufCoverageFile<CR>
-"map ft :FufTag<CR>
-"map fd :FufDir<CR>
-"map ,fd :FufDir<CR>
-"
-"CTRLP plugin
-"map ff :CtrlP ~/public_html<CR>
-let g:ctrlp_working_path_mode = 'r'
-map ff :CtrlP<CR>
-map ft :CtrlPTag<CR>
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip
-let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
-"let g:ctrlp_custom_ignore = {
-"  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
-"  \ 'file': '\v\.(exe|so|dll)$',
-"  \ 'link': 'some_bad_symbolic_links',
-"  \ }
-
-" if PHP
-"let g:ctrlp_user_command = 'find %s -type f -name "*php" -or -name "*css" -or -name "*js" | egrep -v "system\/|not_using|view_variables|views\/"'
-" for Ruby
-"let g:ctrlp_user_command = 'find %s -type f -name "*php" -or -name "*css" -or -name "*js" -or -name "*rb" '
-let g:ctrlp_user_command = 'find %s -type f -not -name "*swp" | egrep -v "/\." | egrep -v "~" '
-
-let g:ctrlp_use_caching = 1
-"let g:ctrlp_clear_cache_on_exit = 0
-let g:ctrlp_clear_cache_on_exit = 1
-let g:ctrlp_cache_dir = '~/.cache/ctrlp'
 
 "map GIT (vcscommand plugin)
 map ,gd :call ExecuteVCSCommand("VCSDiff")<CR>
@@ -191,82 +97,47 @@ let g:CSApprox_konsole = 1
 colorscheme wombat
 "colorscheme vividchalk
 
-" phpDocumentor
-inoremap <C-P> <ESC>:call PhpDocSingle()<CR>i 
-nnoremap <C-P> :call PhpDocSingle()<CR> 
-vnoremap <C-P> :call PhpDocRange()<CR> 
 
 "set <leader>
 let mapleader = ","
 set cursorline
 
-" debug php 
-map ,db :!php -l %<CR>
-
-""set fold
-"setlocal foldmethod=syntax
-"set foldlevelstart=1
-"let javaScript_fold=1         " JavaScript
-"let perl_fold=1               " Perl
-"let php_folding=1             " PHP
-"let r_syntax_folding=1        " R
-"let ruby_fold=1               " Ruby
-"let sh_fold_enabled=1         " sh
-"let vimsyn_folding='af'       " Vim script
-"let xml_syntax_folding=1      " XML
 nnoremap <Space> za
-
-"disable folding
-set nofoldenable
-
-
-" php folding plugin
-map ,fo let g:DisableAutoPHPFolding=0<CR><Esc>:EnableFastPHPFolds<Cr>
-map fo :normal zR<CR>
-map fc :normal zM<CR>
 
 set guifont="ubuntu mono":h11:w5
 
-"neocomplcache
-"so ~/.vim/neocomplcache.vim
-
-"xdebug window resize 
-function! WindowResizeDebug()
-	normal ,mbc
-	exec "normal 100\<C-W>|"
-endfunction
-"map ,db :call WindowResizeDebug()<CR>
-
 "go outside 
-source $VIMRUNTIME/mswin.vim 
-behave mswin
-"imap ,, <esc>/]\\|}\\|)<cr>A 
+"source $VIMRUNTIME/mswin.vim
+"behave mswin
 inoremap ,, <esc>/['"})\]]<cr>A
-"map ,, /['"})]<cr>
 
-"minibufexpl
-let g:miniBufExplMapWindowNavVim = 1
-let g:miniBufExplMapWindowNavArrows = 1
-let g:miniBufExplMapCTabSwitchBufs = 1
-let g:miniBufExplMapCTabSwitchWindows = 1
+so ~/.vim/mysetting/neocomplcache.vim
+"so ~/.vim/mysetting/fold.vim
+so ~/.vim/mysetting/unicode.vim
+so ~/.vim/mysetting/php.vim
+so ~/.vim/mysetting/web.vim
+so ~/.vim/mysetting/function.vim
+so ~/.vim/mysetting/ack.vim
+so ~/.vim/mysetting/ctrlp.vim
+so ~/.vim/mysetting/gvim.vim
+so ~/.vim/mysetting/syntastic.vim
+so ~/.vim/mysetting/rails.vim
+so ~/.vim/mysetting/ultisnips.vim
+so ~/.vim/mysetting/cscope.vim
+so ~/.vim/mysetting/surround.vim
+so ~/.vim/mysetting/supertab.vim
 
-"todo by ack
-command Todo Ack! 'TODO\|FIXME'
+set incsearch        "search during typing
+set hlsearch	       "highlight search
 
-"****************
-" gVIM
-"****************
-set mouse=""
-set guifont=courier\ new\ 11
-if has('gui_running')
-	set mouse=a
-endif
+"Indent
+set tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+set wrap! nu nobackup writebackup
+set ignorecase  infercase                              | "set ignore case searching
 
-"vim debugger 
-let g:ruby_debugger_debug_mode = 1
-let g:ruby_debugger_spec_path = 'rspec'
-let g:ruby_debugger_default_script = 'rails s'
-let g:ruby_debugger_no_maps = 1
+set autoread
+au CursorHold * checktime
 
-"unmap <ctrl-z> 
-"unmap <c-z> 
+"for fish-shell
+set shell=/bin/bash
+

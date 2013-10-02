@@ -1,6 +1,6 @@
 ":map <C-W><C-P> :call TabListToggle()<CR>
 ":map <silent> <Leader>p <Plug>ToggleProject
-:map <F8> :call TabListToggle()<CR>
+":map <F8> :call TabListToggle()<CR>
 :map \p <Plug>ToggleProject
 :let mtl=0
 " :function! TabListToggle()
@@ -87,3 +87,31 @@ set wildmode=longest,full
 :endif
 :endfunction
 
+"go to current path (open file, or current dir)
+:function! CdToCurrentPath()
+:if (len(expand('%')) == 0)
+:else
+:cd %:h
+:endif
+:NERDTree
+:endfunction
+
+
+"go to current path (open file, or current dir)
+map ,ww <C-W><C-W>
+:function! ExecuteVCSCommand(command)
+
+":if (expand('%') =~ "git diff" || expand('%') =~ "git log")
+:if (expand('%') =~ "git ")
+:q
+:else
+	:normal ,ww
+	:if (expand('%') =~ "git ")
+		:q
+	:endif
+:endif
+
+
+:exec a:command
+
+:endfunction
