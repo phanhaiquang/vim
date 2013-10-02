@@ -126,6 +126,7 @@ so ~/.vim/mysetting/ultisnips.vim
 so ~/.vim/mysetting/cscope.vim
 so ~/.vim/mysetting/surround.vim
 so ~/.vim/mysetting/supertab.vim
+so ~/.vim/mysetting/refresh.vim
 
 set incsearch        "search during typing
 set hlsearch	       "highlight search
