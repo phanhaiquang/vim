@@ -96,6 +96,8 @@ let g:CSApprox_konsole = 1
 "colorscheme desert
 colorscheme wombat
 "colorscheme vividchalk
+"colorscheme railscasts
+"colorscheme github
 
 
 "set <leader>
@@ -122,11 +124,14 @@ so ~/.vim/mysetting/ctrlp.vim
 so ~/.vim/mysetting/gvim.vim
 so ~/.vim/mysetting/syntastic.vim
 so ~/.vim/mysetting/rails.vim
-so ~/.vim/mysetting/ultisnips.vim
 so ~/.vim/mysetting/cscope.vim
 so ~/.vim/mysetting/surround.vim
 so ~/.vim/mysetting/supertab.vim
 so ~/.vim/mysetting/refresh.vim
+so ~/.vim/mysetting/ultisnips.vim
+
+map ,cb :normal $V%,cc<CR>
+
 
 set incsearch        "search during typing
 set hlsearch	       "highlight search

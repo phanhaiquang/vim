@@ -1,4 +1,5 @@
 "map Rails plugin
+"autocmd FileType ruby map <F5> :!foreman run rspec %<CR>
 autocmd FileType ruby map <F6> :Rake<CR>
 
 map ,ec :Econtroller 
