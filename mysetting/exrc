@@ -95,9 +95,11 @@ let g:CSApprox_konsole = 1
 "collor
 "colorscheme desert
 colorscheme wombat
-"colorscheme vividchalk
 "colorscheme railscasts
-"colorscheme github
+"colorscheme jellybeans
+"colorscheme twilight
+"colorscheme candy
+"colorscheme candycode
 
 
 "set <leader>
@@ -112,6 +114,9 @@ set guifont="ubuntu mono":h11:w5
 "source $VIMRUNTIME/mswin.vim
 "behave mswin
 inoremap ,, <esc>/['"})\]]<cr>A
+
+"set ignorecase  infercase                              | "set ignore case searching*/
+set ignorecase
 
 so ~/.vim/mysetting/neocomplcache.vim
 "so ~/.vim/mysetting/fold.vim
@@ -139,7 +144,6 @@ set hlsearch	       "highlight search
 "Indent
 set tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 set wrap! nu nobackup writebackup
-set ignorecase  infercase                              | "set ignore case searching
 
 set autoread
 au CursorHold * checktime

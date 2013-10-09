@@ -1,4 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =2
+let g:netrw_dirhist_cnt =5
 let g:netrw_dirhist_1='/home/quangphan/project/rails/buzzstarter/spec/features/admin'
 let g:netrw_dirhist_2='/home/quangphan/.vim/mysetting'
+let g:netrw_dirhist_3='/home/quangphan/project/rails/backbone-tunes'
+let g:netrw_dirhist_4='/home/quangphan/project/rails/backbone-tunes/test-js'
+let g:netrw_dirhist_5='/home/quangphan/.vim/bundle/vim-rails'

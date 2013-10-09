@@ -1,8 +1,8 @@
 "for snip & supertab
-let g:UltiSnipsExpandTrigger='<c-l>'
+let g:UltiSnipsExpandTrigger='<tab>'
 "let g:UltiSnipsListSnippets = '<tab>'
-let g:UltiSnipsJumpForwardTrigger = '<c-l>'
-let g:UltiSnipsJumpBackwardTrigger = '<c-h>'
+let g:UltiSnipsJumpForwardTrigger = '<tab>'
+let g:UltiSnipsJumpBackwardTrigger = '<c-tab>'
 
 set runtimepath+=~/.vim/bundle/ultisnips
 let g:ulti_expand_or_jump_res = 0 "default value, just set once                                                                                                                      
