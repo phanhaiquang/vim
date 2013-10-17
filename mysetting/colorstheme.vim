@@ -1,0 +1,30 @@
+"collor
+"colorscheme github
+"colorscheme desert
+"colorscheme wombat
+"colorscheme railscasts
+"colorscheme twilight
+"colorscheme candycode
+"colorscheme jellybeans
+"let g:jellybeans_overrides = {
+      "\    'Todo': { 'guifg': '303030', 'guibg': 'f0f000',
+      "\              'ctermfg': 'Black', 'ctermbg': 'Yellow',
+      "\              'attr': 'bold' },
+      "\}
+"let g:jellybeans_use_lowcolor_black = 0
+"autocmd FileType * colorscheme jellybeans
+
+"let blacklist = ['js']
+"autocmd BufWritePre * if index(blacklist, &ft) < 0 
+  
+"endif
+"let g:hybrid_use_Xresources = 1
+colorscheme hybrid
+"colorscheme hybrid-light
+"colorscheme proton
+"set background=dark
+"let g:solarized_visibility = "high"
+"let g:solarized_contrast = "high"
+"let g:solarized_termtrans=1
+"let g:solarized_termcolors=256
+"colorscheme solarized

@@ -16,7 +16,9 @@ let g:ctrlp_custom_ignore = '\v[\/][\.](git|hg|svn)$'
 " for Ruby
 "let g:ctrlp_user_command = 'find %s -type f -name "*php" -or -name "*css" -or -name "*js" -or -name "*rb" '
 "let g:ctrlp_user_command = 'find %s -type f -not -name "*swp" -or "*jpg" | egrep -v "/\." | egrep -v "~|coverage" '
-let g:ctrlp_user_command = 'find %s -type f | egrep -v "\.git|tmp|\<log\>|coverage|^./public|^./vendor" | egrep -v "png$|jpg$|.keep|zip$|swp$"'
+"let g:ctrlp_user_command = 'find %s -type f | egrep -v "\.git|tmp|\<log\>|coverage" | egrep -v "png$|jpg$|.keep|zip$|swp$|/vendor/public/"'
+"For backbone.js
+let g:ctrlp_user_command = 'find %s -type f | egrep -v "\.git|tmp|\<log\>|coverage" | egrep -v "png$|jpg$|.keep|zip$|swp$"'
 
 let g:ctrlp_use_caching = 1
 let g:ctrlp_clear_cache_on_exit = 0

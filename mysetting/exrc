@@ -17,8 +17,10 @@ map ,mm :call ToggleMouseSetting()<CR>           | "toggle mouse
 
 "alignment
 map ,=  :Align \s=\s<CR>
-map ,,  :Align \s,\s<CR>
-map ,:  :Align \s:\s<CR>
+map  ;; mt])A;<ESC>`t
+imap ;; <ESC>mt])A;<ESC>`ta
+map ,, mt]}A,<ESC>`t
+imap ,, <ESC>]}A,<CR>
 
 "session
 :nmap ,ss :mksession! ~/.vim/session/
@@ -92,16 +94,6 @@ let VCSCommandDisableMappings=1
 set t_Co=256
 let g:CSApprox_konsole = 1
 
-"collor
-"colorscheme desert
-colorscheme wombat
-"colorscheme railscasts
-"colorscheme jellybeans
-"colorscheme twilight
-"colorscheme candy
-"colorscheme candycode
-
-
 "set <leader>
 let mapleader = ","
 set cursorline
@@ -113,12 +105,11 @@ set guifont="ubuntu mono":h11:w5
 "go outside 
 "source $VIMRUNTIME/mswin.vim
 "behave mswin
-inoremap ,, <esc>/['"})\]]<cr>A
+"inoremap ,, <esc>/['"})\]]<cr>A
 
-"set ignorecase  infercase                              | "set ignore case searching*/
-set ignorecase
 
 so ~/.vim/mysetting/neocomplcache.vim
+"so ~/.vim/mysetting/neocomplete.vim
 "so ~/.vim/mysetting/fold.vim
 so ~/.vim/mysetting/unicode.vim
 so ~/.vim/mysetting/php.vim
@@ -131,15 +122,20 @@ so ~/.vim/mysetting/syntastic.vim
 so ~/.vim/mysetting/rails.vim
 so ~/.vim/mysetting/cscope.vim
 so ~/.vim/mysetting/surround.vim
-so ~/.vim/mysetting/supertab.vim
 so ~/.vim/mysetting/refresh.vim
 so ~/.vim/mysetting/ultisnips.vim
+so ~/.vim/mysetting/supertab.vim
+so ~/.vim/mysetting/colorstheme.vim
+so ~/.vim/mysetting/javascript.vim
 
-map ,cb :normal $V%,cc<CR>
+map <c-j> :normal $V%,cc<CR>:normal $%<CR>
+map <c-k> :normal $V%,c <CR>
+map <c-J> :normal V%,cc<CR>:normal $%<CR>
+map <c-K> :normal V%,c <CR>
+map == :normal V%=<CR>
+map ,yj :normal V%y<CR>
+map ,dj :normal V%d<CR>
 
-
-set incsearch        "search during typing
-set hlsearch	       "highlight search
 
 "Indent
 set tabstop=2 softtabstop=2 shiftwidth=2 expandtab
@@ -150,4 +146,15 @@ au CursorHold * checktime
 
 "for fish-shell
 set shell=/bin/bash
+runtime macros/matchit.vim
 
+"set mouse=a
+"set mousehide
+set ruler
+
+"set ignorecase  infercase noinf
+set ignorecase infercase smartcase
+map <F9> :set ignorecase!<CR>
+
+set incsearch        "search during typing
+set hlsearch	       "highlight search

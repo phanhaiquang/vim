@@ -34,12 +34,12 @@ inoremap <expr><C-l>     neocomplcache#complete_common_string()
 
 " Recommended key-mappings.
 " <CR>: close popup and save indent.
-"inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
-"function! s:my_cr_function()
-"  "return neocomplcache#smart_close_popup() . "\<CR>"
-"  " For no inserting <CR> key.
-"  return pumvisible() ? neocomplcache#close_popup() : "\<CR>"
-"endfunction
+inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+function! s:my_cr_function()
+  "return neocomplcache#smart_close_popup() . "\<CR>"
+  " For no inserting <CR> key.
+  return pumvisible() ? neocomplcache#close_popup() : "\<CR>"
+endfunction
 " <TAB>: completion.
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 " <C-h>, <BS>: close popup and delete backword char.
@@ -89,4 +89,5 @@ let g:neocomplcache_omni_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
 let g:neocomplcache_omni_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 
 "testing
-inoremap <expr><CR>  pumvisible() ? neocomplcache#close_popup() : "\<CR>"
+"inoremap <expr><CR>  pumvisible() ? neocomplcache#close_popup() : "\<CR>"
+let g:neocomplcache_enable_fuzzy_completion = 1
