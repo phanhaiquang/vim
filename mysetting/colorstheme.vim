@@ -1,8 +1,15 @@
+set t_Co=256
+if &term =~ '256color'
+  set t_ut=
+endif
+
 "collor
 "colorscheme github
 "colorscheme desert
 "colorscheme wombat
 "colorscheme railscasts
+":highlight Normal ctermfg=grey ctermbg=black
+
 "colorscheme twilight
 "colorscheme candycode
 "colorscheme jellybeans
@@ -21,7 +28,7 @@
 "let g:hybrid_use_Xresources = 1
 colorscheme hybrid
 "colorscheme hybrid-light
-"colorscheme proton
+
 "set background=dark
 "let g:solarized_visibility = "high"
 "let g:solarized_contrast = "high"

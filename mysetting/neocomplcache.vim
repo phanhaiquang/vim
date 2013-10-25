@@ -91,3 +91,11 @@ let g:neocomplcache_omni_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 "testing
 "inoremap <expr><CR>  pumvisible() ? neocomplcache#close_popup() : "\<CR>"
 let g:neocomplcache_enable_fuzzy_completion = 1
+
+"if !exists('g:neocomplcache_delimiter_patterns')
+"  let g:neocomplcache_delimiter_patterns= {}
+"endif
+"let g:neocomplcache_delimiter_patterns.ruby = [':']
+"let g:neocomplcache_delimiter_patterns.eruby = [':']
+
+set iskeyword-=",:

@@ -2,6 +2,8 @@
 "map ff :CtrlP ~/public_html<CR>
 let g:ctrlp_working_path_mode = 'r'
 map ff :CtrlP<CR>
+map fb :CtrlPBuffer<CR>
+map fm :CtrlPMRU<CR>
 map ft :CtrlPTag<CR>
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 let g:ctrlp_custom_ignore = '\v[\/][\.](git|hg|svn)$'

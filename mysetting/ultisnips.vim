@@ -12,5 +12,3 @@ function! Ulti_ExpandOrJump_and_getRes()
 endfunction
 inoremap <NL> <C-R>=(Ulti_ExpandOrJump_and_getRes() > 0)?"":IMAP_Jumpfunc('', 0)<CR>
 
-inoremap <expr> <C-j>     pumvisible() ? "\<C-n>" : "\<Down>"
-inoremap <expr> <C-k>     pumvisible() ? "\<C-p>" : "\<Up>"

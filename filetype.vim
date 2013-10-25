@@ -1,4 +1,4 @@
-runtime! ftdetect/*.vim
+"runtime! ftdetect/*.vim
 
 ""for multiple file type loaded for checkers
 "augroup filetypedetect 
@@ -9,5 +9,8 @@ runtime! ftdetect/*.vim
 "
 augroup filetypedetect 
     au BufNewFile,BufRead *.fish set filetype=csh
-    au BufNewFile,BufRead *.html.erb set filetype=eruby.html
+    au BufNewFile,BufRead *.rabl set filetype=ruby
+
+    "au BufNewFile,BufRead *.html.erb set filetype=eruby.html
 augroup end 
+

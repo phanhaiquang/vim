@@ -11,4 +11,6 @@ let g:SuperTabCrMapping = 0
 :highlight Pmenu guibg=brown gui=bold
 :highlight Pmenu ctermbg=238 gui=bold
 
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+inoremap <expr><TAB>      pumvisible() ? "\<C-n>" : "\<TAB>"
+inoremap <expr> <C-j>     pumvisible() ? "\<C-n>" : "\<Down>"
+inoremap <expr> <C-k>     pumvisible() ? "\<C-p>" : "\<Up>"
