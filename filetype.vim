@@ -11,6 +11,7 @@ augroup filetypedetect
     au BufNewFile,BufRead *.fish set filetype=csh
     au BufNewFile,BufRead *.rabl set filetype=ruby
 
-    "au BufNewFile,BufRead *.html.erb set filetype=eruby.html
+    "mark a tag blocks in html
+    au BufNewFile,BufRead *.html.erb map <buffer> vv vat
 augroup end 
 

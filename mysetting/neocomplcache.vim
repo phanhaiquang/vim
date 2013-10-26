@@ -98,4 +98,4 @@ let g:neocomplcache_enable_fuzzy_completion = 1
 "let g:neocomplcache_delimiter_patterns.ruby = [':']
 "let g:neocomplcache_delimiter_patterns.eruby = [':']
 
-set iskeyword-=",:
+set completefunc=neocomplcache#complete#manual_complete

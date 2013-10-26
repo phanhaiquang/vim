@@ -1,3 +1,6 @@
+"""to completion 
+"set ofu=syntaxcomplete#Complete
+
 runtime bundle/pathogen/autoload/pathogen.vim
 call pathogen#infect()
 call pathogen#helptags()
@@ -29,8 +32,6 @@ imap ,, <ESC>mt]}A,<ESC>`ta
 :nmap ,ss :mksession! ~/.vim/session/
 :nmap ,os :so ~/.vim/session/
 
-""to completion 
-"set ofu=syntaxcomplete#Complete
 
 "--- TAB setting
 "quickfix use current tab if exist
@@ -91,6 +92,7 @@ let g:CSApprox_konsole = 1
 
 set guifont="ubuntu mono":h11:w5
 
+
 so ~/.vim/mysetting/neocomplcache.vim
 "so ~/.vim/mysetting/neocomplete.vim
 "so ~/.vim/mysetting/fold.vim
@@ -115,11 +117,19 @@ map <c-j> :normal $V%,cc<CR>:normal $%<CR>
 map <c-k> :normal $V%,c <CR>
 map <c-J> :normal V%,cc<CR>:normal $%<CR>
 map <c-K> :normal V%,c <CR>
-map == :normal V%=<CR>%
+"map == :normal V%=<CR>%
+map == =%
 map ,yj :normal V%y<CR>
 map ,dj :normal V%d<CR>
 map ''  ysiw'
 map ""  ysiw"
+map vv  [mV]M
+map v{  [{V%
+
+runtime macros/matchit.vim
+"autocmd FileType html let b:match_words = '<\(\w\w*\):</\1,{:}'
+"autocmd FileType xhtml let b:match_words = '<\(\w\w*\):</\1,{:}'
+"autocmd FileType xml let b:match_words = '<\(\w\w*\):</\1,{:}'
 
 "Indent
 set tabstop=2 softtabstop=2 shiftwidth=2 expandtab
@@ -130,7 +140,6 @@ au CursorHold * checktime
 
 "for fish-shell
 set shell=/bin/bash
-runtime macros/matchit.vim
 
 set ignorecase infercase
 set incsearch hlsearch
@@ -138,3 +147,4 @@ set cmdheight=2
 set cursorline
 set ruler
 set nocompatible
+set nolist
