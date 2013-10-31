@@ -12,6 +12,7 @@ augroup filetypedetect
     au BufNewFile,BufRead *.rabl set filetype=ruby
 
     "mark a tag blocks in html
-    au BufNewFile,BufRead *.html.erb map <buffer> vv vat
+    au BufNewFile,BufRead *.html.erb map vv <c-y>d
+    au BufNewFile,BufRead *.html.erb imap vv <c-y>d
 augroup end 
 

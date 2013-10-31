@@ -61,11 +61,11 @@ inoremap <expr><C-e>  neocomplcache#cancel_popup()
 "let g:neocomplcache_enable_insert_char_pre = 1
 
 " AutoComplPop like behavior.
-"let g:neocomplcache_enable_auto_select = 1
+let g:neocomplcache_enable_auto_select = 0
 
 " Shell like behavior(not recommended).
 "set completeopt+=longest
-"let g:neocomplcache_enable_auto_select = 1
+"let g:neocomplcache_enable_auto_select = 0
 "let g:neocomplcache_disable_auto_complete = 1
 "inoremap <expr><TAB>  pumvisible() ? "\<Down>" : "\<C-x>\<C-u>"
 
@@ -99,3 +99,4 @@ let g:neocomplcache_enable_fuzzy_completion = 1
 "let g:neocomplcache_delimiter_patterns.eruby = [':']
 
 set completefunc=neocomplcache#complete#manual_complete
+let g:neocomplcache_ctags_program = "/usr/bin/ctags"
