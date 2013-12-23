@@ -11,6 +11,7 @@ augroup filetypedetect
     au BufNewFile,BufRead *.fish set filetype=csh
     au BufNewFile,BufRead *.rabl set filetype=ruby
     au BufNewFile,BufRead *.sv set filetype=systemverilog.verilog
+    au BufNewFile,BufRead *.rb set filetype=ruby
 
     "mark a tag blocks in html
     au BufNewFile,BufRead *.html.erb map vv <c-y>d

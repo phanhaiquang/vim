@@ -115,6 +115,7 @@ so ~/.vim/mysetting/javascript.vim
 so ~/.vim/mysetting/auto_pairs.vim
 so ~/.vim/mysetting/emmet.vim
 so ~/.vim/mysetting/nerdcommenter.vim
+so ~/.vim/mysetting/autotag.vim
 
 map ,gf :Gitv!<CR>
 
