@@ -112,3 +112,6 @@
 [submodule "bundle/vim-sleuth"]
 	path = bundle/vim-sleuth
 	url = git@github.com:tpope/vim-sleuth.git
+[submodule "bundle/gitv"]
+	path = bundle/gitv
+	url = git@github.com:gregsexton/gitv.git

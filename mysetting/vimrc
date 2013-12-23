@@ -114,6 +114,7 @@ so ~/.vim/mysetting/colorstheme.vim
 so ~/.vim/mysetting/javascript.vim
 so ~/.vim/mysetting/auto_pairs.vim
 so ~/.vim/mysetting/emmet.vim
+map ,gf :Gitv!<CR>
 
 ""auto close
 "inoremap {      {}<Left>
@@ -150,8 +151,7 @@ set autoread
 au CursorHold * checktime
 
 "for fish-shell
-set shell=/bin/bash
-
+set shell=/bin/bash 
 set ignorecase infercase
 set incsearch hlsearch
 "set cmdheight=2
