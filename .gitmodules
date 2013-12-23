@@ -105,7 +105,7 @@
 	url = git@github.com:sukima/xmledit.git
 [submodule "bundle/nerdcommenter"]
 	path = bundle/nerdcommenter
-	url = https://github.com/scrooloose/nerdcommenter
+	url = git@github.com:phanhaiquang/nerdcommenter.git
 [submodule "bundle/vim-sensible"]
 	path = bundle/vim-sensible
 	url = git://github.com/tpope/vim-sensible.git

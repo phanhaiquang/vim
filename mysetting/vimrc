@@ -70,7 +70,7 @@ map ,b :'<,'>normal
 set isfname-=,:
 
 "set path for Linux command execution
-set path+=.,~/public_html,~/public_html/application,~,~/project/tz/application
+set path+=.,~/public_html,~/public_html/application,~,~/project/tz/application,~/project/rails/buzzstarter
 
 "auto reload
 ":set ar
