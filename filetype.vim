@@ -10,7 +10,7 @@ runtime! ftdetect/*.vim
 augroup filetypedetect 
     au BufNewFile,BufRead *.fish set filetype=csh
     au BufNewFile,BufRead *.rabl set filetype=ruby
-    au BufNewFile,BufRead *.sv set filetype=verilog.systemverilog
+    au BufNewFile,BufRead *.sv set filetype=systemverilog.verilog
 
     "mark a tag blocks in html
     au BufNewFile,BufRead *.html.erb map vv <c-y>d

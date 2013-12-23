@@ -114,6 +114,8 @@ so ~/.vim/mysetting/colorstheme.vim
 so ~/.vim/mysetting/javascript.vim
 so ~/.vim/mysetting/auto_pairs.vim
 so ~/.vim/mysetting/emmet.vim
+so ~/.vim/mysetting/nerdcommenter.vim
+
 map ,gf :Gitv!<CR>
 
 ""auto close
