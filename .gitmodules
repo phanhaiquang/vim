@@ -6,7 +6,8 @@
 	url = git@github.com:tpope/vim-haml.git
 [submodule "bundle/ctrlp"]
 	path = bundle/ctrlp
-	url = git@github.com:kien/ctrlp.vim.git
+	;url = git@github.com:kien/ctrlp.vim.git
+	url = git@github.com:phanhaiquang/ctrlp.vim.git
 [submodule "bundle/vim-backbone"]
 	path = bundle/vim-backbone
 	url = git@github.com:mklabs/vim-backbone.git
