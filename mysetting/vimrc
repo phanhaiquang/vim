@@ -140,6 +140,8 @@ map ""  ysiw"
 map vv  [mV]M
 map v{  [{V%
 
+map <F2> :w<CR>
+imap <F2> <ESC>:w<CR>a
 runtime macros/matchit.vim
 "autocmd FileType html let b:match_words = '<\(\w\w*\):</\1,{:}'
 "autocmd FileType xhtml let b:match_words = '<\(\w\w*\):</\1,{:}'
