@@ -1,6 +1,7 @@
 "map Rails plugin
 "autocmd FileType ruby map <F5> :cd /home/quangphan/project/rails/buzzstarter<CR>:Rrunner<CR>
 autocmd FileType ruby map <F5> :cd /home/quangphan/project/rails/buzzstarter<CR>:Dispatch rspec %<CR>
+autocmd FileType ruby imap <F5> <ESC>:cd /home/quangphan/project/rails/buzzstarter<CR>:Dispatch rspec %<CR>
 autocmd FileType ruby map <F6> :Rake<CR>
 
 map ,ec :Econtroller 
@@ -36,4 +37,3 @@ highlight PMenu gui=bold guibg=#CECECE guifg=#444444
 "let g:ruby_debugger_default_script = 'rails s'
 "let g:ruby_debugger_no_maps = 1
 
-autocmd FileType ruby let b:match_words = '\<\%(if\|unless\|case\|while\|until\|for\|do\|class\|module\|def\|begin\)\>=\@!:\<\%(else\|elsif\|ensure\|when\|rescue\|break\|redo\|next\|retry\)\>:\<end\>,{:},\[:\],(:)'
