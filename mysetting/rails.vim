@@ -35,3 +35,5 @@ highlight PMenu gui=bold guibg=#CECECE guifg=#444444
 "let g:ruby_debugger_spec_path = 'rspec'
 "let g:ruby_debugger_default_script = 'rails s'
 "let g:ruby_debugger_no_maps = 1
+
+autocmd FileType ruby let b:match_words = '\<\%(if\|unless\|case\|while\|until\|for\|do\|class\|module\|def\|begin\)\>=\@!:\<\%(else\|elsif\|ensure\|when\|rescue\|break\|redo\|next\|retry\)\>:\<end\>,{:},\[:\],(:)'
