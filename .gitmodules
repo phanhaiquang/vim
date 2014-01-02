@@ -26,7 +26,7 @@
 	url = git@github.com:phanhaiquang/AutoTag.git
 [submodule "bundle/ultisnips"]
 	path = bundle/ultisnips
-	url = git@github.com:SirVer/ultisnips.git
+	url = git@github.com:phanhaiquang/ultisnips.git
 [submodule "bundle/vim-less"]
 	path = bundle/vim-less
 	url = git@github.com:groenewege/vim-less.git
@@ -38,7 +38,7 @@
 	url = https://github.com/scrooloose/nerdtree.git
 [submodule "bundle/xml.vim"]
 	path = bundle/xml.vim
-	url = git@github.com:othree/xml.vim.git
+	url = git@github.com:phanhaiquang/xml.vim.git
 [submodule "bundle/vim-lucius"]
 	path = bundle/vim-lucius
 	url = git@github.com:jonathanfilip/vim-lucius.git
@@ -59,7 +59,7 @@
 	url = git@github.com:ervandew/supertab.git
 [submodule "bundle/vim-endwise"]
 	path = bundle/vim-endwise
-	url = git@github.com:tpope/vim-endwise.git
+	url = git@github.com:phanhaiquang/vim-endwise.git
 [submodule "bundle/scss-syntax.vim"]
 	path = bundle/scss-syntax.vim
 	url = git@github.com:cakebaker/scss-syntax.vim.git
@@ -98,13 +98,13 @@
 	url = git@github.com:altercation/vim-colors-solarized.git
 [submodule "bundle/vim-ruby"]
 	path = bundle/vim-ruby
-	url = git@github.com:vim-ruby/vim-ruby.git
+	url = git@github.com:phanhaiquang/vim-ruby.git
 [submodule "bundle/vim-rails"]
 	path = bundle/vim-rails
 	url = http://github.com/tpope/vim-rails
 [submodule "bundle/xmledit"]
 	path = bundle/xmledit
-	url = git@github.com:sukima/xmledit.git
+	url = git@github.com:phanhaiquang/xmledit.git
 [submodule "bundle/nerdcommenter"]
 	path = bundle/nerdcommenter
 	url = git@github.com:phanhaiquang/nerdcommenter.git
