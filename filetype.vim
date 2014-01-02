@@ -1,4 +1,4 @@
-runtime! ftdetect/*.vim
+"au BufRead,BufNewFile * runtime! ftdetect/*.vim
 
 ""for multiple file type loaded for checkers
 "augroup filetypedetect 
@@ -10,7 +10,8 @@ runtime! ftdetect/*.vim
 augroup filetypedetect 
     au BufNewFile,BufRead *.fish set filetype=csh
     au BufNewFile,BufRead *.rabl set filetype=ruby
-    au BufNewFile,BufRead *.sv set filetype=systemverilog.verilog
+    au BufNewFile,BufRead *.sv set filetype=systemverilog
+    au BufNewFile,BufRead *.v set filetype=verilog
     au BufNewFile,BufRead *.rb set filetype=ruby
 
     "mark a tag blocks in html

@@ -1,15 +1,27 @@
-"set completeopt+=longest
-"let g:SuperTabLongestEnhanced = 1
-"let g:SuperTabLongestHighlight = 1
+set completeopt+=longest
+let g:SuperTabLongestEnhanced = 1
+let g:SuperTabLongestHighlight = 1
 "let g:SuperTabDefaultCompletionType = "<c-n>"
-"let g:SuperTabDefaultCompletionType = "context"
-let g:SuperTabDefaultCompletionType = "<c-x><c-]>"
+let g:SuperTabDefaultCompletionType = "context"
+"let g:SuperTabDefaultCompletionType = "<c-x><c-]>"
 
-"testing
 let g:SuperTabCrMapping = 0
-"let g:SuperTabDefaultCompletionType = "context"
-"testing
-let g:SuperTabCrMapping = 0
+function MyTagContext()
+  if &filetype == "systemverilog"
+    return "\<c-x>\<c-n>"
+  endif
+  if &filetype == "ruby"
+    return "\<c-n>"
+  endif
+  if filereadable(expand('%:p:h') . '/tags')
+    return "\<c-x>\<c-]>"
+  endif
+  " no return will result in the evaluation of the next
+  " configured context
+endfunction
+let g:SuperTabCompletionContexts =
+      \ ['MyTagContext', 's:ContextText', 's:ContextDiscover']
+
 "let g:SuperTabClosePreviewOnPopupClose=1
 "let g:SuperTabRetainCompletionDuration='completion'
 "set infercase 

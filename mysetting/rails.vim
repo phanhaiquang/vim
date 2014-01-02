@@ -1,7 +1,7 @@
 "map Rails plugin
 "autocmd FileType ruby map <F5> :cd /home/quangphan/project/rails/buzzstarter<CR>:Rrunner<CR>
-autocmd FileType ruby map <F5> :cd /home/quangphan/project/rails/buzzstarter<CR>:Dispatch rspec %<CR>
-autocmd FileType ruby imap <F5> <ESC>:cd /home/quangphan/project/rails/buzzstarter<CR>:Dispatch rspec %<CR>
+autocmd FileType ruby map <F5> :w!<CR>:cd /home/quangphan/project/rails/buzzstarter<CR>:Dispatch rspec %<CR>
+autocmd FileType ruby imap <F5> <ESC>:w!<CR>:cd /home/quangphan/project/rails/buzzstarter<CR>:Dispatch rspec %<CR>
 autocmd FileType ruby map <F6> :Rake<CR>
 
 map ,ec :Econtroller 
