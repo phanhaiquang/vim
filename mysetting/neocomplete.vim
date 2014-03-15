@@ -1,6 +1,8 @@
 let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#enable_smart_case = 1
 let g:neocomplete#sources#syntax#min_keyword_length = 3
+let g:neocomplete#min_keyword_length = 3
+let g:neocomplete#auto_completion_start_length = 3
 let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
 let g:neocomplete#sources#dictionary#dictionaries = {
     \ 'default' : '',
@@ -33,8 +35,14 @@ let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 
 "inoremap <expr><CR>  pumvisible() ? neocomplete#close_popup() : "\<CR>"
 "inoremap <expr><CR>  pumvisible() ? "\<c-y>" : "\<CR>"
+inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+function! s:my_cr_function()
+  return pumvisible() ? neocomplete#close_popup() : "\<CR>"
+  "return neocomplete#close_popup() . "\<CR>"
+  "return pumvisible() ? neocomplete#smart_close_popup() : "\<CR>"
+endfunction
 
 
 ""
 let g:neocomplete#enable_fuzzy_completion = 1
-let g:neocomplete#enable_auto_select = 1
+let g:neocomplete#enable_auto_select = 0

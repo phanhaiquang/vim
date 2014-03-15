@@ -1,8 +1,14 @@
 "map Rails plugin
+augroup filetypedetect 
+   au BufNewFile,BufRead *.rb  set tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+augroup end
 "autocmd FileType ruby map <F5> :cd /home/quangphan/project/rails/buzzstarter<CR>:Rrunner<CR>
-autocmd FileType ruby map <F5> :w!<CR>:cd /home/quangphan/project/rails/buzzstarter<CR>:Dispatch rspec %<CR>
-autocmd FileType ruby imap <F5> <ESC>:w!<CR>:cd /home/quangphan/project/rails/buzzstarter<CR>:Dispatch rspec %<CR>
+autocmd FileType ruby map <F5> :w!<CR>:cd /home/quangphan/project/rails/buzzstarter<CR>:Dispatch foreman run rspec %<CR>
+autocmd FileType ruby imap <F5> <ESC>:w!<CR>:cd /home/quangphan/project/rails/buzzstarter<CR>:Dispatch foreman run rspec %<CR>
 autocmd FileType ruby map <F6> :Rake<CR>
+
+autocmd FileType javascript map <F5> :w!<CR>:cd /home/quangphan/project/rails/buzzstarter<CR>:Dispatch rake spec:javascript RAILS_ENV=test SPEC=%:t:r<CR>
+autocmd FileType javascript imap <F5> <ESC>:w!<CR>:cd /home/quangphan/project/rails/buzzstarter<CR>:Dispatch rake spec:javascript RAILS_ENV=test SPEC=%:t:r<CR>
 
 map ,ec :Econtroller 
 map ,ee :Eenvironment 
@@ -37,3 +43,4 @@ highlight PMenu gui=bold guibg=#CECECE guifg=#444444
 "let g:ruby_debugger_default_script = 'rails s'
 "let g:ruby_debugger_no_maps = 1
 
+let g:neocomplete#force_overwrite_completefunc = 1

@@ -21,6 +21,7 @@ let g:ctrlp_custom_ignore = '\v[\/][\.](git|hg|svn)$'
 "let g:ctrlp_user_command = 'find %s -type f | egrep -v "\.git|tmp|\<log\>|coverage" | egrep -v "png$|jpg$|.keep|zip$|swp$|/vendor/public/"'
 "For backbone.js
 let g:ctrlp_user_command = 'find %s -type f | egrep -v "\.git|tmp|\<log\>|coverage" | egrep -v "png$|jpg$|.keep|zip$|swp$"'
+"let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
 
 let g:ctrlp_use_caching = 1
 let g:ctrlp_clear_cache_on_exit = 0
