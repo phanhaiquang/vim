@@ -111,7 +111,7 @@ so ~/.vim/mysetting/ctrlp.vim
 so ~/.vim/mysetting/gvim.vim
 so ~/.vim/mysetting/syntastic.vim
 so ~/.vim/mysetting/rails.vim
-so ~/.vim/mysetting/python.vim
+"so ~/.vim/mysetting/python.vim
 so ~/.vim/mysetting/cscope.vim
 so ~/.vim/mysetting/surround.vim
 so ~/.vim/mysetting/refresh.vim
