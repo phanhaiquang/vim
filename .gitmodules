@@ -129,9 +129,6 @@
 [submodule "cucumber"]
 	path = bundle/cucumber
 	url = git@github.com:tpope/vim-cucumber.git
-[submodule "vim-slime"]
-	path = bundle/vim-slime
-	url = git@github.com:jpalardy/vim-slime.git
 [submodule "bundle/rainbow_parentheses"]
 	path = bundle/rainbow_parentheses
 	url = git@github.com:kien/rainbow_parentheses.vim.git
