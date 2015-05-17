@@ -99,8 +99,8 @@ set guifont="ubuntu mono":h11:w5
 autocmd FileType verilog let g:AutoPairs = {'(':')', '[':']', '{':'}',"'":"'",'"':'"' }
 """
 
-"so ~/.vim/mysetting/neocomplcache.vim
-so ~/.vim/mysetting/neocomplete.vim
+so ~/.vim/mysetting/neocomplcache.vim
+"so ~/.vim/mysetting/neocomplete.vim
 "so ~/.vim/mysetting/fold.vim
 so ~/.vim/mysetting/unicode.vim
 so ~/.vim/mysetting/php.vim
@@ -123,6 +123,7 @@ so ~/.vim/mysetting/auto_pairs.vim
 so ~/.vim/mysetting/emmet.vim
 so ~/.vim/mysetting/nerdcommenter.vim
 so ~/.vim/mysetting/autotag.vim
+so ~/.vim/mysetting/rainbow.vim
 
 let g:syntastic_enable_signs = 1
 let g:syntastic_auto_loc_list = 0
@@ -154,8 +155,9 @@ map ""  ysiw"
 map vv  [mV]M
 map v{  [{V%
 
-map <F2> :w<CR>
-imap <F2> <ESC>:w<CR>
+"set paste
+map <F2> :update<CR>
+imap <F2> <ESC>:update<CR>
 runtime macros/matchit.vim
 "autocmd FileType html let b:match_words = '<\(\w\w*\):</\1,{:}'
 "autocmd FileType xhtml let b:match_words = '<\(\w\w*\):</\1,{:}'
@@ -177,4 +179,9 @@ set nocompatible
 set nolist
 set nostartofline
 
-
+"vim-slime
+let g:slime_target = "tmux"
+"map <f8> V<c-c><c-c>j<c-w><c-w>:sleep 100m<CR>:e<CR><c-w><c-w>V
+"vmap <f8> <c-c><c-c>j<c-w><c-w>:sleep 100m<CR>:e<CR><c-w><c-w>V
+map <f8> V<c-c><c-c>j
+vmap <f8> <c-c><c-c>j
