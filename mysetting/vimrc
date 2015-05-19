@@ -124,6 +124,7 @@ so ~/.vim/mysetting/emmet.vim
 so ~/.vim/mysetting/nerdcommenter.vim
 so ~/.vim/mysetting/autotag.vim
 so ~/.vim/mysetting/rainbow.vim
+so ~/.vim/mysetting/slime.vim
 
 let g:syntastic_enable_signs = 1
 let g:syntastic_auto_loc_list = 0
@@ -179,9 +180,3 @@ set nocompatible
 set nolist
 set nostartofline
 
-"vim-slime
-let g:slime_target = "tmux"
-"map <f8> V<c-c><c-c>j<c-w><c-w>:sleep 100m<CR>:e<CR><c-w><c-w>V
-"vmap <f8> <c-c><c-c>j<c-w><c-w>:sleep 100m<CR>:e<CR><c-w><c-w>V
-map <f8> V<c-c><c-c>j
-vmap <f8> <c-c><c-c>j
