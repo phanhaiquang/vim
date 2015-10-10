@@ -180,3 +180,4 @@ set nocompatible
 set nolist
 set nostartofline
 
+set autowriteall
