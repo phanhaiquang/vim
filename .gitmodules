@@ -135,3 +135,6 @@
 [submodule "bundle/vim-slime"]
 	path = bundle/vim-slime
 	url = git@github.com:jpalardy/vim-slime.git
+[submodule "bundle/vim-snippets"]
+	path = bundle/vim-snippets
+	url = git@github.com:honza/vim-snippets.git
