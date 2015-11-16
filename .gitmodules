@@ -26,7 +26,8 @@
 	url = git@github.com:phanhaiquang/AutoTag.git
 [submodule "bundle/ultisnips"]
 	path = bundle/ultisnips
-	url = git@github.com:phanhaiquang/ultisnips.git
+	;url = git@github.com:phanhaiquang/ultisnips.git
+	url = git@github.com:SirVer/ultisnips.git
 [submodule "bundle/vim-less"]
 	path = bundle/vim-less
 	url = git@github.com:groenewege/vim-less.git
