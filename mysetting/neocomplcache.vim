@@ -99,4 +99,4 @@ let g:neocomplcache_enable_fuzzy_completion = 1
 "let g:neocomplcache_delimiter_patterns.eruby = [':']
 
 set completefunc=neocomplcache#complete#manual_complete
-let g:neocomplcache_ctags_program = "/usr/bin/ctags"
+let g:neocomplcache_ctags_program = "/usr/local/bin/ctags"
