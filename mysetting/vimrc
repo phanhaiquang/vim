@@ -101,7 +101,7 @@ autocmd FileType verilog let g:AutoPairs = {'(':')', '[':']', '{':'}',"'":"'",'"
 
 so ~/.vim/mysetting/neocomplcache.vim
 "so ~/.vim/mysetting/neocomplete.vim
-"so ~/.vim/mysetting/fold.vim
+so ~/.vim/mysetting/fold.vim
 so ~/.vim/mysetting/unicode.vim
 so ~/.vim/mysetting/php.vim
 so ~/.vim/mysetting/web.vim
