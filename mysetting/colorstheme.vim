@@ -27,14 +27,6 @@ endif
 "endif
 "let g:hybrid_use_Xresources = 1
 colorscheme hybrid
-"colorscheme hybrid-light
-"colorscheme seoul256
 "colorscheme lucius
 "let g:lucius_style = 'dark'
 
-"set background=dark
-"let g:solarized_visibility = "high"
-"let g:solarized_contrast = "high"
-"let g:solarized_termtrans=1
-"let g:solarized_termcolors=256
-"colorscheme solarized
