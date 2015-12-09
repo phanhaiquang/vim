@@ -16,7 +16,6 @@
 
 " === php folding plugin
 "disable folding
-set nofoldenable
 " map ,fo let g:DisableAutoPHPFolding=0<CR><Esc>:EnableFastPHPFolds<Cr>
 map fo :normal zR<CR>
 map fc :normal zM<CR>
