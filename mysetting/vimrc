@@ -58,7 +58,6 @@ endif
 " Use pathogen to load plugins from bundle directory
 "filetype off
 "call pathogen#incubate()
-"call pathogen#helptags()
 "filetype on
 
 " auto indent
@@ -100,7 +99,6 @@ autocmd FileType verilog let g:AutoPairs = {'(':')', '[':']', '{':'}',"'":"'",'"
 """
 
 so ~/.vim/mysetting/neocomplcache.vim
-"so ~/.vim/mysetting/neocomplete.vim
 so ~/.vim/mysetting/fold.vim
 so ~/.vim/mysetting/unicode.vim
 so ~/.vim/mysetting/php.vim
@@ -125,6 +123,7 @@ so ~/.vim/mysetting/nerdcommenter.vim
 so ~/.vim/mysetting/autotag.vim
 so ~/.vim/mysetting/rainbow.vim
 so ~/.vim/mysetting/slime.vim
+so ~/.vim/mysetting/indentLine.vim
 so ~/.vim/mysetting/snippets.vim
 
 let g:syntastic_enable_signs = 1
