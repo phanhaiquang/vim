@@ -181,3 +181,11 @@ set nolist
 set nostartofline
 
 set autowriteall
+
+"no flash
+set novisualbell
+
+map ,nn :set invnu<CR>
+map ,ww :set invwrap<CR>
+map ,cd :call CdToCurrentPath()<CR>
+
