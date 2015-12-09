@@ -118,9 +118,9 @@
 [submodule "vim-sleuth"]
 	path = vim-sleuth
 	url = git@github.com:tpope/vim-sleuth.git
-[submodule "neocomplete.vim"]
-	path = bundle/neocomplete.vim
-	url = git@github.com:Shougo/neocomplete.vim.git
+;[submodule "neocomplete.vim"]
+;    path = bundle/neocomplete.vim
+;    url = git@github.com:Shougo/neocomplete.vim.git
 [submodule "bundle/vim-coffee-script"]
 	path = bundle/vim-coffee-script
 	url = git@github.com:kchmck/vim-coffee-script.git
@@ -136,9 +136,9 @@
 [submodule "bundle/vim-slime"]
 	path = bundle/vim-slime
 	url = git@github.com:jpalardy/vim-slime.git
-[submodule "bundle/neocomplete"]
-	path = bundle/neocomplete
-	url = git@github.com:Shougo/neocomplete.vim.git
+;[submodule "bundle/neocomplete"]
+;    path = bundle/neocomplete
+;    url = git@github.com:Shougo/neocomplete.vim.git
 [submodule "bundle/vim-snippets"]
 	path = bundle/vim-snippets
 	url = git@github.com:honza/vim-snippets.git
