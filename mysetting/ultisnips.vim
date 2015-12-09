@@ -1,11 +1,16 @@
 "for snip & supertab
 let g:UltiSnipsExpandTrigger='<c-l>'
 "let g:UltiSnipsListSnippets = '<tab>'
-let g:UltiSnipsJumpForwardTrigger = '<c-l>'
+"let g:UltiSnipsJumpForwardTrigger = '<c-j>'
+"let g:UltiSnipsJumpBackwardTrigger = '<c-k>'
+let g:UltiSnipsJumpForwardTrigger = '<tab>'
 let g:UltiSnipsJumpBackwardTrigger = '<c-h>'
 
-""set runtimepath+=~/.vim/bundle/ultisnips
+"https://github.com/SirVer/ultisnips/issues/214
+let g:UltiSnipsSnippetDirectories=["ultisnips"]
+"let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/bundle/ultisnips']
 
+"set runtimepath+=~/.vim/bundle/ultisnips
 
 "function! CleverTab()
 "  if pumvisible()

@@ -125,6 +125,7 @@ so ~/.vim/mysetting/nerdcommenter.vim
 so ~/.vim/mysetting/autotag.vim
 so ~/.vim/mysetting/rainbow.vim
 so ~/.vim/mysetting/slime.vim
+so ~/.vim/mysetting/snippets.vim
 
 let g:syntastic_enable_signs = 1
 let g:syntastic_auto_loc_list = 0
