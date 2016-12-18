@@ -75,7 +75,12 @@ set wildmode=longest,full
 :endif
 :endfunction
 
-:set mouse=i
+" use "alt" when using mouse to copy in vim
+:map <ScrollWheelUp> <C-Y>
+:map <ScrollWheelDown> <C-E>
+:set mouse=
+:set mousehide
+
 :let lmouse=0
 :function! ToggleMouseSetting()
 :if (g:lmouse==0)
@@ -83,7 +88,7 @@ set wildmode=longest,full
 :  set mouse=a
 :else
 :  let g:lmouse=0
-:  set mouse=i
+:  set mouse=
 :endif
 :endfunction
 

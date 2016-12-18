@@ -22,6 +22,9 @@ map <C-W><C-Y> :'q,'wy<CR>
 map ,ll :normal @e<CR>                           | "loop for a @e
 map ,mm :call ToggleMouseSetting()<CR>           | "toggle mouse
 
+" map double click to open a file
+":nnoremap <2-LeftMouse> :normal gf<CR>
+
 "alignment
 map ,=  :Align \s=\s<CR>
 
