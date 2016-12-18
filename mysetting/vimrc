@@ -1,6 +1,5 @@
 """to completion 
 "set ofu=syntaxcomplete#Complete
-
 runtime bundle/pathogen/autoload/pathogen.vim
 call pathogen#infect()
 call pathogen#helptags()
@@ -12,7 +11,8 @@ syntax on
 filetype indent plugin on
 
 "Indent
-set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
+"set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
+set tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 set wrap! nu nobackup writebackup
 
 "should use virtual-mode
@@ -20,10 +20,16 @@ map <C-W><C-D> :'q,'wd<CR>
 map <C-W><C-Y> :'q,'wy<CR>
 
 map ,ll :normal @e<CR>                           | "loop for a @e
+
+let NERDTreeMouseMode=3                          | "allow to single click to open a node
+let g:NERDTreeDirArrows=0                        | "avoid issue that can not navigate to some folders
 map ,mm :call ToggleMouseSetting()<CR>           | "toggle mouse
 
 " map double click to open a file
 ":nnoremap <2-LeftMouse> :normal gf<CR>
+
+"clipboard
+set clipboard=autoselect
 
 "alignment
 map ,=  :Align \s=\s<CR>
@@ -41,7 +47,8 @@ imap ;; <ESC>mt])A;<ESC>`ta
 
 "--- TAB setting
 "quickfix use current tab if exist
-set switchbuf=usetab,newtab
+"set switchbuf=usetab,newtab
+set switchbuf=usetab
 map ,nt :set switchbuf=usetab,newtab<CR>         | "new tab
 map ,st :set switchbuf=usetab<CR>               | "same tab
 
@@ -101,6 +108,9 @@ set guifont="ubuntu mono":h11:w5
 autocmd FileType verilog let g:AutoPairs = {'(':')', '[':']', '{':'}',"'":"'",'"':'"' }
 """
 
+"do not hide quote in JSON
+set conceallevel=0
+
 so ~/.vim/mysetting/neocomplcache.vim
 so ~/.vim/mysetting/fold.vim
 so ~/.vim/mysetting/unicode.vim
@@ -113,6 +123,7 @@ so ~/.vim/mysetting/gvim.vim
 so ~/.vim/mysetting/syntastic.vim
 so ~/.vim/mysetting/rails.vim
 "so ~/.vim/mysetting/python.vim
+"so ~/.vim/mysetting/ruby.vim
 so ~/.vim/mysetting/cscope.vim
 so ~/.vim/mysetting/surround.vim
 so ~/.vim/mysetting/refresh.vim
@@ -128,6 +139,7 @@ so ~/.vim/mysetting/rainbow.vim
 so ~/.vim/mysetting/slime.vim
 so ~/.vim/mysetting/indentLine.vim
 so ~/.vim/mysetting/snippets.vim
+so ~/.vim/mysetting/flow.vim
 
 let g:syntastic_enable_signs = 1
 let g:syntastic_auto_loc_list = 0
@@ -160,6 +172,8 @@ map vv  [mV]M
 map v{  [{V%
 
 "set paste
+map <leader>pp :set invpaste<CR>
+
 map <F2> :update<CR>
 imap <F2> <ESC>:update<CR>
 runtime macros/matchit.vim
@@ -186,9 +200,12 @@ set nostartofline
 set autowriteall
 
 "no flash
+let belloff="all"
 set novisualbell
 
 map ,nn :set invnu<CR>
 map ,ww :set invwrap<CR>
 map ,cd :call CdToCurrentPath()<CR>
 
+"replace tab by spaces
+map ,<tab><tab> :set tabstop=2 softtabstop=2 noexpandtab<CR>:retab!<CR>:set expandtab<CR>:retab!<CR>
