@@ -14,6 +14,7 @@ function MyTagContext()
   if filereadable(expand('%:p:h') . '/tags')
     return "\<c-x>\<c-]>"
   endif
+  return "\<c-n>"
 endfunction
 let g:SuperTabCompletionContexts = ['MyTagContext', 's:ContextText', 's:ContextDiscover']
 
