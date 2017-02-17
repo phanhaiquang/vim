@@ -26,8 +26,21 @@ endif
   
 "endif
 "let g:hybrid_use_Xresources = 1
-set background=dark
-colorscheme hybrid
 "colorscheme lucius
 "let g:lucius_style = 'dark'
 
+"set background=dark
+"colorscheme hybrid
+
+" https://github.com/mhartington/oceanic-next
+ " Theme
+syntax enable
+" for vim 8
+if (has("termguicolors"))
+  let &t_8f="\e[38;2;%ld;%ld;%ldm"
+  let &t_8b="\e[48;2;%ld;%ld;%ldm"
+  set termguicolors
+endif
+
+set background=dark
+colorscheme OceanicNext
