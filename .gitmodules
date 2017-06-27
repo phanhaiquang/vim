@@ -166,3 +166,9 @@
 [submodule "bundle/oceanic-next"]
 	path = bundle/oceanic-next
 	url = https://github.com/mhartington/oceanic-next.git
+[submodule "bundle/vim-bookmarks"]
+	path = bundle/vim-bookmarks
+	url = https://github.com/MattesGroeger/vim-bookmarks.git
+[submodule "/Users/quangphan/.vim/bundle/node"]
+	path = /Users/quangphan/.vim/bundle/node
+	url = https://github.com/moll/vim-node.git

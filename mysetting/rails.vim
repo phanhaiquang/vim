@@ -3,7 +3,8 @@ augroup filetypedetect
    au BufNewFile,BufRead *.rb  set tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 augroup end
 
-""autocmd FileType ruby map <F5> :cd /home/quangphan/project/rails/buzzstarter<CR>:Rrunner<CR>
+"let g:gitdir = systemlist('git rev-parse --show-toplevel')[0]
+"autocmd FileType ruby map <F5> :cd /home/quangphan/project/rails/buzzstarter<CR>:Rrunner<CR>
 "autocmd FileType ruby map <F5> :w!<CR>:cd /home/quangphan/project/rails/buzzstarter<CR>:Dispatch foreman run rspec %<CR>
 "autocmd FileType ruby imap <F5> <ESC>:w!<CR>:cd /home/quangphan/project/rails/buzzstarter<CR>:Dispatch foreman run rspec %<CR>
 "autocmd FileType ruby map <F6> :Rake<CR>

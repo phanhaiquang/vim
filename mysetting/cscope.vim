@@ -1,6 +1,8 @@
 "cscope
 "we update by ~/bin/monitor_projects
 au BufNewFile,BufRead * call UpdateProjectData()
+"set cscopequickfix=s-,c-,d-,i-,t-,e-,a-
+"set cscopequickfix=s+,c+,d+,i+,t+,e+,a+
 
 if has("cscope")
     set csprg=/usr/local/bin/cscope

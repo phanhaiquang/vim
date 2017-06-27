@@ -124,16 +124,16 @@ function! IsFold()
   return foldclosed(line('.')) != -1
 endfunction
 
-let g:code_dir = "/Users/quangphan/Pingo/Code/"
-let g:proj_name = ""
+let g:gitdir = systemlist('git rev-parse --show-toplevel')[0]
+let g:proj_name = substitute(g:gitdir, ".*/", "", "")
 function! UpdateProjectData()
-  if g:proj_name == ""
-    let g:proj_name = substitute(substitute(expand("%:p"), g:code_dir, "", ""), "/.*", "", "")
+  "if g:proj_name == ""
+    "let g:proj_name = substitute(substitute(expand("%:p"), g:code_dir, "", ""), "/.*", "", "")
     let cscope_file = expand("~/.project/" . g:proj_name . "/cscope.out")
     if filereadable(cscope_file)
       set nocscopeverbose
-      exec "cs add " . cscope_file
+      exec "cs add " . cscope_file . " " . g:gitdir . "/"
       set cscopeverbose
     endif
-  endif
+  "endif
 endfunction

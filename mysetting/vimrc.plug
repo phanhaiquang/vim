@@ -1,0 +1,290 @@
+"--------- Plugin manager load
+call plug#begin('~/.vim/plugged')
+Plug 'tpope/vim-cucumber', {'for': ['ruby']}
+Plug 'tpope/vim-haml', {'for': ['haml', 'sass', 'scss']}
+Plug 'phanhaiquang/ctrlp.vim'
+Plug 'mklabs/vim-backbone', {'for': ['javascript', 'jsx', 'javascript.jsx']}
+Plug 'tpope/vim-bundler', {'for': ['ruby', 'gemfilelock']}
+Plug 'tpope/vim-surround'
+Plug 'itchyny/lightline.vim'
+"Plug 'phanhaiquang/AutoTag'
+Plug 'SirVer/ultisnips'
+Plug 'groenewege/vim-less', {'for': ['less']}
+Plug 'Shutnik/jshint2.vim', {'for': ['javascript', 'jsx', 'javascript.jsx']}
+Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
+Plug 'phanhaiquang/xml.vim', {'for': ['xml', 'html']}
+Plug 'Shougo/neocomplcache'
+Plug 'mattn/emmet-vim', {'for': ['html']}
+Plug 'tpope/vim-fugitive'
+Plug 'ervandew/supertab'
+Plug 'phanhaiquang/vim-endwise'
+Plug 'cakebaker/scss-syntax.vim', {'for': ['scss']}
+Plug 'scrooloose/syntastic'
+Plug 'pangloss/vim-javascript', {'for': ['javascript', 'jsx', 'javascript.jsx']}
+Plug 'tpope/vim-dispatch', {'for': ['ruby']}
+Plug 'ecomba/vim-ruby-refactoring', {'for': ['ruby']}
+Plug 'mileszs/ack.vim'
+Plug 'JazzCore/neocomplcache-ultisnips'
+Plug 'jiangmiao/auto-pairs'
+Plug 'phanhaiquang/vim-ruby', {'for': ['ruby', 'slim', 'erb']}
+Plug 'tpope/vim-rails', {'for': ['ruby', 'slim', 'erb']}
+Plug 'phanhaiquang/xmledit', {'for': ['html', 'xml']}
+Plug 'phanhaiquang/nerdcommenter'
+Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-sleuth'
+Plug 'gregsexton/gitv', {'on': ['Gitv', 'Gitv!']}
+Plug 'kchmck/vim-coffee-script', {'for': ['coffee']}
+"Plug 'claco/jasmine.vim'
+"Plug 'tpope/vim-cucumber', {'for': 'ruby'}
+Plug 'kien/rainbow_parentheses.vim'
+Plug 'jpalardy/vim-slime', {'on': ['SlimeConfig', 'SlimeSend']}
+Plug 'honza/vim-snippets'
+Plug 'dbakker/vim-projectroot'
+Plug 'slim-template/vim-slim', {'for': ['slim']}
+Plug 'Yggdroot/indentLine'
+Plug 'mxw/vim-jsx', {'for': ['javascript', 'jsx', 'javascript.jsx']}
+Plug 'isRuslan/vim-es6', {'for': ['javascript', 'jsx', 'javascript.jsx']}
+Plug 'flowtype/vim-flow', {'for': ['javascript', 'jsx', 'javascript.jsx']}
+Plug 'ap/vim-css-color', {'for': ['css', 'scss']}
+Plug 'mhartington/oceanic-next'
+"Plug 'MattesGroeger/vim-bookmarks'
+"Plug 'moll/vim-node', {'for': ['javascript', 'jsx', 'javascript.jsx']}
+Plug 'vim-scripts/Align'
+Plug 'godlygeek/csapprox'
+Plug 'vim-scripts/cscope.vim', {'for': ['ruby', 'javascript']}
+Plug 'tpope/vim-cucumber', {'for': ['ruby']}
+"Plug 'vim-scripts/sudo.vim'
+Plug 'vim-scripts/SyntaxComplete'
+Plug 'nachumk/systemverilog.vim', {'for': ['verilog', 'systemverilog']}
+Plug 'vim-scripts/taglist.vim'
+Plug 'vim-scripts/vcscommand.vim', {'on': ['VCSAdd', 'VCSAnnotate', 'VCSBlame', 'VCSCommit', 'VCSDelete', 'VCSDiff', 'VCSGotoOriginal', 'VCSLog', 'VCSRemove', 'VCSRevert', 'VCSReview', 'VCSStatus', 'VCSUpdate', 'VCSVimDiff']}
+
+"Color theme
+"Plug 'jonathanfilip/vim-lucius'
+"Plug 'w0ng/vim-hybrid'
+"Plug 'junegunn/seoul256.vim'
+"Plug 'nanotech/jellybeans.vim'
+"Plug 'altercation/vim-colors-solarized'
+
+"--- manuall install and update
+"Plug '~/.vim/bundle/align'
+"Plug '~/.vim/bundle/csapprox'
+"Plug '~/.vim/bundle/cscope'
+"Plug '~/.vim/bundle/cucumber'
+"Plug '~/.vim/bundle/pry'
+"Plug '~/.vim/bundle/rainbow_parentheses'
+"Plug '~/.vim/bundle/sudo.vim'
+"Plug '~/.vim/bundle/syntaxcompletion'
+"Plug '~/.vim/bundle/systemverilog'
+"Plug '~/.vim/bundle/taglist'
+"Plug '~/.vim/bundle/vcscommand'
+call plug#end()
+"--------- Plugin manager end
+
+let mapleader = ","
+
+"set guifont="courier new":h10:w5
+syntax on
+filetype indent plugin on
+
+"Indent
+"set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
+set tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+set wrap! nu nobackup writebackup
+
+"should use virtual-mode
+map <C-W><C-D> :'q,'wd<CR>
+map <C-W><C-Y> :'q,'wy<CR>
+
+map ,ll :normal @e<CR>                           | "loop for a @e
+
+let NERDTreeMouseMode=3                          | "allow to single click to open a node
+let g:NERDTreeDirArrows=0                        | "avoid issue that can not navigate to some folders
+map ,mm :call ToggleMouseSetting()<CR>           | "toggle mouse
+
+" map double click to open a file
+":nnoremap <2-LeftMouse> :normal gf<CR>
+
+"clipboard
+set clipboard=autoselect
+
+"alignment
+map ,=  :Align \s=\s<CR>
+
+"insert ';' or ','
+map  ;; mt])A;<ESC>`t
+imap ;; <ESC>mt])A;<ESC>`ta
+"map ,, mt]}A,<ESC>`t
+"imap ,, <ESC>mt]}A,<ESC>`ta
+
+"session
+:nmap ,ss :mksession! ~/.vim/session/
+:nmap ,os :so ~/.vim/session/
+
+
+"--- TAB setting
+"quickfix use current tab if exist
+"set switchbuf=usetab,newtab
+set switchbuf=usetab
+map ,nt :set switchbuf=usetab,newtab<CR>         | "new tab
+map ,st :set switchbuf=usetab<CR>               | "same tab
+
+"mapping
+:nmap <c-l> :tabn<CR>
+:nmap <c-h> :tabp<CR>
+:nmap ,ta :tab sball<CR>
+
+" Uncomment the following to have Vim jump to the last position when                                                       
+" reopening a file
+if has("autocmd")
+   au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
+    \| exe "normal! g'\"" | endif
+endif
+
+" Use pathogen to load plugins from bundle directory
+"filetype off
+"call pathogen#incubate()
+"filetype on
+
+" auto indent
+"map ,= gg=G
+
+map ,b :'<,'>normal 
+
+
+
+
+"set filename
+set isfname-=,:
+
+"set path for Linux command execution
+set path+=.
+
+"auto reload
+":set ar
+
+"NERDTree plugin
+map ,nt :call CdToCurrentPath()<CR>
+
+let g:gitdir = systemlist('git rev-parse --show-toplevel')[0]
+map ,cr :execute "cd " g:gitdir<CR>
+
+"map GIT (vcscommand plugin)
+map ,gd :call ExecuteVCSCommand("VCSDiff")<CR>
+map ,gl :call ExecuteVCSCommand("VCSLog")<CR>
+map ,gb :call ExecuteVCSCommand("VCSBlame")<CR>
+
+"avoid mapping
+let VCSCommandDisableExtensionMappings=1
+let VCSCommandDisableMappings=1
+
+set t_Co=256
+let g:CSApprox_konsole = 1
+
+set guifont="ubuntu mono":h11:w5
+
+"verilog
+autocmd FileType verilog let g:AutoPairs = {'(':')', '[':']', '{':'}',"'":"'",'"':'"' }
+"""
+
+"do not hide quote in JSON
+set conceallevel=0
+
+so ~/.vim/mysetting/neocomplcache.vim
+so ~/.vim/mysetting/fold.vim
+so ~/.vim/mysetting/unicode.vim
+"so ~/.vim/mysetting/php.vim
+so ~/.vim/mysetting/web.vim
+so ~/.vim/mysetting/function.vim
+so ~/.vim/mysetting/ack.vim
+so ~/.vim/mysetting/ctrlp.vim
+so ~/.vim/mysetting/gvim.vim
+so ~/.vim/mysetting/syntastic.vim
+so ~/.vim/mysetting/rails.vim
+so ~/.vim/mysetting/cscope.vim
+so ~/.vim/mysetting/surround.vim
+so ~/.vim/mysetting/refresh.vim
+so ~/.vim/mysetting/ultisnips.vim
+so ~/.vim/mysetting/supertab.vim
+so ~/.vim/mysetting/colorstheme.vim
+so ~/.vim/mysetting/javascript.vim
+so ~/.vim/mysetting/auto_pairs.vim
+so ~/.vim/mysetting/emmet.vim
+so ~/.vim/mysetting/nerdcommenter.vim
+"so ~/.vim/mysetting/autotag.vim
+so ~/.vim/mysetting/rainbow.vim
+so ~/.vim/mysetting/slime.vim
+so ~/.vim/mysetting/indentLine.vim
+so ~/.vim/mysetting/snippets.vim
+so ~/.vim/mysetting/flow.vim
+so ~/.vim/mysetting/bookmark.vim
+
+map ,gf :Gitv!<CR>
+
+""auto close
+"inoremap {      {}<Left>
+"inoremap {<CR>  {<CR>}<Esc>O
+"inoremap {{     {
+"inoremap {}     {}
+"inoremap [      []<Left>
+"inoremap []     []<Left>
+
+map <c-j> :normal $V%,cc<CR>:normal $%<CR>
+map <c-k> :normal $V%,c <CR>
+map <c-J> :normal V%,cc<CR>:normal $%<CR>
+map <c-K> :normal V%,c <CR>
+"map == :normal V%=<CR>%
+map == =%
+map ,yj :normal V%y<CR>
+map ,dj :normal V%d<CR>
+map ''  ysiw'
+map ""  ysiw"
+map vv  [mV]M
+map v{  [{V%
+
+"set paste
+map <leader>pp :set invpaste<CR>
+
+map <F2> :update<CR>
+imap <F2> <ESC>:update<CR>
+runtime macros/matchit.vim
+"autocmd FileType html let b:match_words = '<\(\w\w*\):</\1,{:}'
+"autocmd FileType xhtml let b:match_words = '<\(\w\w*\):</\1,{:}'
+"autocmd FileType xml let b:match_words = '<\(\w\w*\):</\1,{:}'
+
+set iskeyword+=-
+
+set autoread
+au CursorHold * checktime
+
+"for fish-shell
+set shell=/bin/bash 
+set ignorecase infercase
+set incsearch hlsearch
+"set cmdheight=2
+set cursorline
+set ruler
+set nocompatible
+set nolist
+set nostartofline
+
+set autowriteall
+
+"no flash
+let belloff="all"
+set novisualbell
+
+map ,nn :set invnu<CR>
+map ,ww :set invwrap<CR>
+map ,cd :call CdToCurrentPath()<CR>
+
+"replace tab by spaces
+map ,<tab><tab> :set tabstop=2 softtabstop=2 noexpandtab<CR>:retab!<CR>:set expandtab<CR>:retab!<CR>
+
+"add js/erb subfix
+"set autochdir
+"set suffixesadd+=.js,.erb,.jsx
+"nmap gf <c-w>gf
+"autocmd FileType javascript.jsx set includeexpr=
+
+noremap + :
