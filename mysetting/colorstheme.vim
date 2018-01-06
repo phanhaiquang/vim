@@ -32,15 +32,14 @@ endif
 "set background=dark
 "colorscheme hybrid
 
-" https://github.com/mhartington/oceanic-next
- " Theme
-syntax enable
-" for vim 8
+"" for vim 8
 if (has("termguicolors"))
-  let &t_8f="\e[38;2;%ld;%ld;%ldm"
-  let &t_8b="\e[48;2;%ld;%ld;%ldm"
+  "let &t_8f="\e[38;2;%ld;%ld;%ldm"
+  "let &t_8b="\e[48;2;%ld;%ld;%ldm"
   set termguicolors
 endif
 
 set background=dark
+let g:oceanic_next_terminal_bold = 1
+let g:oceanic_next_terminal_italic = 1
 colorscheme OceanicNext

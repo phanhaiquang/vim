@@ -13,6 +13,7 @@ augroup filetypedetect
     au BufNewFile,BufRead *.sv set filetype=verilog.systemverilog
     au BufNewFile,BufRead *.v set filetype=verilog
     au BufNewFile,BufRead *.rb set filetype=ruby
+    au BufNewFile,BufRead *.rb set isfname-=.
     au BufNewFile,BufRead *.coffee set filetype=coffee
 
     "autocmd BufNewFile,BufRead *_spec.js let b:dispatch = 'jasmine-node %'
@@ -20,5 +21,7 @@ augroup filetypedetect
     "mark a tag blocks in html
     au BufNewFile,BufRead *.html.erb map vv <c-y>d
     au BufNewFile,BufRead *.html.erb imap vv <c-y>d
+
+    au BufNewFile,BufRead *.* call UpdateProjectData()
 augroup end 
 

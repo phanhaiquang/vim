@@ -7,10 +7,10 @@ let g:UltiSnipsJumpForwardTrigger = '<tab>'
 let g:UltiSnipsJumpBackwardTrigger = '<c-h>'
 
 "https://github.com/SirVer/ultisnips/issues/214
-let g:UltiSnipsSnippetDirectories=["ultisnips"]
-"let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/bundle/ultisnips']
 
-"set runtimepath+=~/.vim/bundle/ultisnips
+"testing
+"let g:UltiSnipsSnippetDirectories=["ultisnips"]
+"let g:UltiSnipsSnippetDirectories=$HOME.'/.vim/UltiSnips'
 
 "function! CleverTab()
 "  if pumvisible()
@@ -32,3 +32,4 @@ let g:UltiSnipsSnippetDirectories=["ultisnips"]
 "endfunction
 ""inoremap <NL> <C-R>=(Ulti_ExpandOrJump_and_getRes() > 0)?"":IMAP_Jumpfunc('', 0)<CR>
 "inoremap <Tab> <C-R>=(Ulti_ExpandOrJump_and_getRes() > 0) ? "": CleverTab()<CR>
+

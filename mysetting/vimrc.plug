@@ -1,91 +1,108 @@
 "--------- Plugin manager load
+filetype indent plugin on
+
 call plug#begin('~/.vim/plugged')
-Plug 'tpope/vim-cucumber', {'for': ['ruby']}
-Plug 'tpope/vim-haml', {'for': ['haml', 'sass', 'scss']}
-Plug 'phanhaiquang/ctrlp.vim'
-Plug 'mklabs/vim-backbone', {'for': ['javascript', 'jsx', 'javascript.jsx']}
-Plug 'tpope/vim-bundler', {'for': ['ruby', 'gemfilelock']}
-Plug 'tpope/vim-surround'
+Plug 'scrooloose/nerdcommenter'
+"Plug 'godlygeek/csapprox'
 Plug 'itchyny/lightline.vim'
-"Plug 'phanhaiquang/AutoTag'
-Plug 'SirVer/ultisnips'
+Plug 'mhartington/oceanic-next'
+
+Plug 'tpope/vim-haml', {'for': ['haml', 'sass', 'scss']}
+Plug 'mklabs/vim-backbone', {'for': ['javascript', 'jsx', 'javascript.jsx']}
+Plug 'tpope/vim-bundler', {'on': ['Bundle']}
+Plug 'tpope/vim-surround'
 Plug 'groenewege/vim-less', {'for': ['less']}
 Plug 'Shutnik/jshint2.vim', {'for': ['javascript', 'jsx', 'javascript.jsx']}
-Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
-Plug 'phanhaiquang/xml.vim', {'for': ['xml', 'html']}
 Plug 'Shougo/neocomplcache'
 Plug 'mattn/emmet-vim', {'for': ['html']}
-Plug 'tpope/vim-fugitive'
-Plug 'ervandew/supertab'
-Plug 'phanhaiquang/vim-endwise'
 Plug 'cakebaker/scss-syntax.vim', {'for': ['scss']}
-Plug 'scrooloose/syntastic'
 Plug 'pangloss/vim-javascript', {'for': ['javascript', 'jsx', 'javascript.jsx']}
-Plug 'tpope/vim-dispatch', {'for': ['ruby']}
-Plug 'ecomba/vim-ruby-refactoring', {'for': ['ruby']}
-Plug 'mileszs/ack.vim'
-Plug 'JazzCore/neocomplcache-ultisnips'
-Plug 'jiangmiao/auto-pairs'
-Plug 'phanhaiquang/vim-ruby', {'for': ['ruby', 'slim', 'erb']}
+Plug 'tpope/vim-dispatch', {'on': ['Make', 'Copen', 'Dispatch', 'Focus'], 'branch': 'job'}
+Plug 'mileszs/ack.vim', {'on': 'Ack'}
+Plug 'ecomba/vim-ruby-refactoring', {'on': ['RExtractMethod', 'RExtractLocalVariable']}
+Plug 'JazzCore/neocomplcache-ultisnips', {'for': ['ruby', 'javascript']}
 Plug 'tpope/vim-rails', {'for': ['ruby', 'slim', 'erb']}
-Plug 'phanhaiquang/xmledit', {'for': ['html', 'xml']}
-Plug 'phanhaiquang/nerdcommenter'
+Plug 'janko-m/vim-test', {'on': ['TestNearest', 'TestLast', 'TestFile']}
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-sleuth'
-Plug 'gregsexton/gitv', {'on': ['Gitv', 'Gitv!']}
 Plug 'kchmck/vim-coffee-script', {'for': ['coffee']}
-"Plug 'claco/jasmine.vim'
-"Plug 'tpope/vim-cucumber', {'for': 'ruby'}
 Plug 'kien/rainbow_parentheses.vim'
 Plug 'jpalardy/vim-slime', {'on': ['SlimeConfig', 'SlimeSend']}
-Plug 'honza/vim-snippets'
 Plug 'dbakker/vim-projectroot'
 Plug 'slim-template/vim-slim', {'for': ['slim']}
 Plug 'Yggdroot/indentLine'
 Plug 'mxw/vim-jsx', {'for': ['javascript', 'jsx', 'javascript.jsx']}
 Plug 'isRuslan/vim-es6', {'for': ['javascript', 'jsx', 'javascript.jsx']}
 Plug 'flowtype/vim-flow', {'for': ['javascript', 'jsx', 'javascript.jsx']}
-Plug 'ap/vim-css-color', {'for': ['css', 'scss']}
-Plug 'mhartington/oceanic-next'
+"Plug 'ap/vim-css-color', {'for': ['css', 'scss']}
+Plug 'vim-scripts/Align', {'on': 'Align'}
+Plug 'vim-scripts/cscope.vim', {'for': ['ruby', 'javascript']}
+Plug 'nachumk/systemverilog.vim', {'for': ['verilog', 'systemverilog']}
+Plug 'AndrewRadev/splitjoin.vim', {'for': ['ruby']}
+
+" lint checker
+"Plug 'scrooloose/syntastic'
+Plug 'w0rp/ale', {'for': ['ruby', 'javascript']}
+
+Plug 'ctrlpvim/ctrlp.vim', {'on': ['CtrlP', 'CtrlPBuffer', 'CtrlPMRU', 'CtrlPTag']}
+Plug 'vim-ruby/vim-ruby', {'for': ['ruby', 'slim', 'erb']}
+Plug 'tpope/vim-endwise', {'for': ['ruby', 'javascript']}
+
+"
+"Plug 'vim-scripts/vcscommand.vim', {'on': ['VCSAdd', 'VCSAnnotate', 'VCSBlame', 'VCSCommit', 'VCSDelete', 'VCSDiff', 'VCSGotoOriginal', 'VCSLog', 'VCSRemove', 'VCSRevert', 'VCSReview', 'VCSStatus', 'VCSUpdate', 'VCSVimDiff']}
+
+" Diff 2 branches by 'vim-merginal', then compare individual file 
+" with another by 'vim-fugitive'. Using "gd" and "ds"
+Plug 'idanarye/vim-merginal'
+Plug 'tpope/vim-fugitive'
+
+Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
+
+" these plugins will be loaded on custom condition
+Plug 'SirVer/ultisnips', {'on': []}
+Plug 'ervandew/supertab', {'on': []}
+Plug 'jiangmiao/auto-pairs', {'on': []}
+Plug 'honza/vim-snippets', {'on': []}
+Plug 'vim-scripts/SyntaxComplete', {'on': []}
+
+"-------------------------- temporarily unused ----------------------------
+
 "Plug 'MattesGroeger/vim-bookmarks'
 "Plug 'moll/vim-node', {'for': ['javascript', 'jsx', 'javascript.jsx']}
-Plug 'vim-scripts/Align'
-Plug 'godlygeek/csapprox'
-Plug 'vim-scripts/cscope.vim', {'for': ['ruby', 'javascript']}
-Plug 'tpope/vim-cucumber', {'for': ['ruby']}
+"Plug 'tpope/vim-cucumber', {'for': ['ruby']}
+"Plug 'vim-scripts/taglist.vim'
 "Plug 'vim-scripts/sudo.vim'
-Plug 'vim-scripts/SyntaxComplete'
-Plug 'nachumk/systemverilog.vim', {'for': ['verilog', 'systemverilog']}
-Plug 'vim-scripts/taglist.vim'
-Plug 'vim-scripts/vcscommand.vim', {'on': ['VCSAdd', 'VCSAnnotate', 'VCSBlame', 'VCSCommit', 'VCSDelete', 'VCSDiff', 'VCSGotoOriginal', 'VCSLog', 'VCSRemove', 'VCSRevert', 'VCSReview', 'VCSStatus', 'VCSUpdate', 'VCSVimDiff']}
+"Plug 'phanhaiquang/ctrlp.vim'
+"Plug 'phanhaiquang/vim-ruby', {'for': ['ruby', 'slim', 'erb']}
+"Plug 'phanhaiquang/vim-endwise'
+"Plug 'phanhaiquang/xml.vim', {'for': ['xml', 'html']}
+"Plug 'phanhaiquang/AutoTag'
+"Plug 'phanhaiquang/xmledit', {'for': ['html', 'xml']}
+"Plug 'phanhaiquang/nerdcommenter'
 
-"Color theme
+""Color theme
 "Plug 'jonathanfilip/vim-lucius'
 "Plug 'w0ng/vim-hybrid'
 "Plug 'junegunn/seoul256.vim'
 "Plug 'nanotech/jellybeans.vim'
 "Plug 'altercation/vim-colors-solarized'
 
-"--- manuall install and update
-"Plug '~/.vim/bundle/align'
-"Plug '~/.vim/bundle/csapprox'
-"Plug '~/.vim/bundle/cscope'
-"Plug '~/.vim/bundle/cucumber'
-"Plug '~/.vim/bundle/pry'
-"Plug '~/.vim/bundle/rainbow_parentheses'
-"Plug '~/.vim/bundle/sudo.vim'
-"Plug '~/.vim/bundle/syntaxcompletion'
-"Plug '~/.vim/bundle/systemverilog'
-"Plug '~/.vim/bundle/taglist'
-"Plug '~/.vim/bundle/vcscommand'
 call plug#end()
 "--------- Plugin manager end
+
+" these plugins are loaded when enter edit mode
+augroup load_on_enter
+   autocmd!
+   autocmd InsertEnter * call plug#load('ultisnips', 'supertab', 'auto-pairs', 'vim-snippets', 'SyntaxComplete')
+            \| autocmd! load_on_enter
+augroup END
 
 let mapleader = ","
 
 "set guifont="courier new":h10:w5
+
+" https://github.com/vim/vim/issues/555
 syntax on
-filetype indent plugin on
 
 "Indent
 "set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
@@ -98,8 +115,6 @@ map <C-W><C-Y> :'q,'wy<CR>
 
 map ,ll :normal @e<CR>                           | "loop for a @e
 
-let NERDTreeMouseMode=3                          | "allow to single click to open a node
-let g:NERDTreeDirArrows=0                        | "avoid issue that can not navigate to some folders
 map ,mm :call ToggleMouseSetting()<CR>           | "toggle mouse
 
 " map double click to open a file
@@ -157,28 +172,16 @@ map ,b :'<,'>normal
 "set filename
 set isfname-=,:
 
-"set path for Linux command execution
-set path+=.
-
 "auto reload
 ":set ar
 
-"NERDTree plugin
-map ,nt :call CdToCurrentPath()<CR>
-
-let g:gitdir = systemlist('git rev-parse --show-toplevel')[0]
+let g:gitdir = projectroot#get()
 map ,cr :execute "cd " g:gitdir<CR>
 
-"map GIT (vcscommand plugin)
-map ,gd :call ExecuteVCSCommand("VCSDiff")<CR>
-map ,gl :call ExecuteVCSCommand("VCSLog")<CR>
-map ,gb :call ExecuteVCSCommand("VCSBlame")<CR>
+"set path for Linux command execution
+set path+=.
 
-"avoid mapping
-let VCSCommandDisableExtensionMappings=1
-let VCSCommandDisableMappings=1
-
-set t_Co=256
+"set t_Co=256
 let g:CSApprox_konsole = 1
 
 set guifont="ubuntu mono":h11:w5
@@ -190,44 +193,7 @@ autocmd FileType verilog let g:AutoPairs = {'(':')', '[':']', '{':'}',"'":"'",'"
 "do not hide quote in JSON
 set conceallevel=0
 
-so ~/.vim/mysetting/neocomplcache.vim
-so ~/.vim/mysetting/fold.vim
-so ~/.vim/mysetting/unicode.vim
-"so ~/.vim/mysetting/php.vim
-so ~/.vim/mysetting/web.vim
-so ~/.vim/mysetting/function.vim
-so ~/.vim/mysetting/ack.vim
-so ~/.vim/mysetting/ctrlp.vim
-so ~/.vim/mysetting/gvim.vim
-so ~/.vim/mysetting/syntastic.vim
-so ~/.vim/mysetting/rails.vim
-so ~/.vim/mysetting/cscope.vim
-so ~/.vim/mysetting/surround.vim
-so ~/.vim/mysetting/refresh.vim
-so ~/.vim/mysetting/ultisnips.vim
-so ~/.vim/mysetting/supertab.vim
-so ~/.vim/mysetting/colorstheme.vim
-so ~/.vim/mysetting/javascript.vim
-so ~/.vim/mysetting/auto_pairs.vim
-so ~/.vim/mysetting/emmet.vim
-so ~/.vim/mysetting/nerdcommenter.vim
-"so ~/.vim/mysetting/autotag.vim
-so ~/.vim/mysetting/rainbow.vim
-so ~/.vim/mysetting/slime.vim
-so ~/.vim/mysetting/indentLine.vim
-so ~/.vim/mysetting/snippets.vim
-so ~/.vim/mysetting/flow.vim
-so ~/.vim/mysetting/bookmark.vim
-
-map ,gf :Gitv!<CR>
-
-""auto close
-"inoremap {      {}<Left>
-"inoremap {<CR>  {<CR>}<Esc>O
-"inoremap {{     {
-"inoremap {}     {}
-"inoremap [      []<Left>
-"inoremap []     []<Left>
+so ~/.vim/mysetting/all.vim
 
 map <c-j> :normal $V%,cc<CR>:normal $%<CR>
 map <c-k> :normal $V%,c <CR>
@@ -258,11 +224,10 @@ set autoread
 au CursorHold * checktime
 
 "for fish-shell
-set shell=/bin/bash 
+set shell=/bin/bash
 set ignorecase infercase
 set incsearch hlsearch
 "set cmdheight=2
-set cursorline
 set ruler
 set nocompatible
 set nolist
@@ -288,3 +253,21 @@ map ,<tab><tab> :set tabstop=2 softtabstop=2 noexpandtab<CR>:retab!<CR>:set expa
 "autocmd FileType javascript.jsx set includeexpr=
 
 noremap + :
+
+au FileType json setlocal equalprg=python\ -m\ json.tool
+
+"for nativation performance
+" https://andrewbrookins.com/tech/slow-scrolling-in-vim-and-macvim-on-os-x-increase-key-repeat-settings/
+set nocursorline
+set lazyredraw
+set synmaxcol=80
+
+map <D-v> :set paste<CR>:normal <D-v>:normal paste!
+map <Leader>gg :Merginal<CR>
+
+"vim-test
+let test#strategy = "dispatch"
+map <Leader>tc :TestNearest<CR>
+map <Leader>tl :TestLast<CR>
+map <f9> :TestLast<CR>
+autocmd BufRead,BufNewFile *_spec.rb map >> :execute "cd " projectroot#get()<CR>:TestNearest<CR>

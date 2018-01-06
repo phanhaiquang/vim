@@ -1,0 +1,51 @@
+snippet rc.d "# rubocop:disable "
+# rubocop:disable $1
+endsnippet
+
+snippet rc.e "# rubocop:enable all"
+# rubocop:enable all 
+endsnippet
+
+snippet rc.methodlen "# rubocop:disable Metrics/MethodLength"
+# rubocop:disable Metrics/MethodLength
+endsnippet
+
+snippet rc.abc "# rubocop:disable Metrics/AbcSize"
+# rubocop:disable Metrics/AbcSize
+endsnippet
+
+snippet rc.blocklen "# rubocop:disable Metrics/BlockLength"
+# rubocop:disable Metrics/BlockLength
+endsnippet
+
+snippet rc.getmethod "# rubocop:disable Style/AccessorMethodName"
+# rubocop:disable Style/AccessorMethodName
+endsnippet
+
+snippet db.rc "[migrate] remove_column from a table"
+remove_column ${1:table_name}, ${2:column}, ${3:column_type}
+endsnippet
+
+snippet db.ac "[migrate] add_column from a table"
+add_column ${1:table_name}, ${2:column}, ${3:column_type}
+endsnippet
+
+snippet db.ad "[migrate] add_column from a table with default value"
+add_column ${1:table_name}, ${2:column}, ${3:column_type}, default: ${4:default_value}
+endsnippet
+
+snippet db.cc "[migrate] change column type"
+change_column ${1:table_name}, ${2:column}, ${3:new_type}
+endsnippet
+
+snippet db.cd "[migrate] change default value of column"
+change_column_default ${1:table_name}, ${2:column}, from: ${3:current_default}, to: ${4:new_default}
+endsnippet
+
+snippet db.dt "[migrate] drop a table"
+drop_table ${1:table_name}
+endsnippet
+
+snippet db.rc "[migrate] rename a column"
+rename_column ${1:table_name}, ${2:old_column}, ${3:new_column}
+endsnippet
